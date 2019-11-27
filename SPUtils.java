@@ -4,7 +4,8 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -302,7 +303,7 @@ public class SPUtils {
                 }
             }
         }
-        sharedPreferences.edit().remove(key);
+        sharedPreferences.edit().remove(key).apply();
     }
 
     /**
@@ -319,5 +320,4 @@ public class SPUtils {
     public static void clear() {
         sharedPreferences.edit().clear().apply();
     }
-
 }
